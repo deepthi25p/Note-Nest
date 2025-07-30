@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NoteNest - Note Details</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* Custom styles for the Inter font and default body */
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #333; /* Dark grey for general text */
+            background-color: #f8f8f8; /* Light background */
+        }
+        /* Custom gradient for buttons for a modern look */
+        .btn-primary {
+            background-image: linear-gradient(to right, #4CAF50, #2E7D32); /* Green gradient */
+        }
+        .btn-primary:hover {
+            background-image: linear-gradient(to right, #2E7D32, #1B5E20); /* Darker gradient on hover */
+        }
+        /* Style for the back button */
+        .btn-secondary {
+            border: 2px solid #4CAF50; /* Green border */
+            color: #4CAF50; /* Green text */
+            background-color: transparent;
+        }
+        .btn-secondary:hover {
+            background-color: #E8F5E9; /* Light green on hover */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Bar -->
+    <nav class="bg-white shadow-md p-4 sticky top-0 z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <!-- Logo -->
+            <a href="#" class="flex items-center space-x-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m0 0l-7 7m7-7v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+                </svg>
+                <span class="text-2xl font-bold text-gray-800 hidden md:block">NoteNest</span>
+            </a>
+
+            <!-- Page Title -->
+            <span class="text-xl md:text-2xl font-semibold text-gray-800">Note Details</span>
+
+            <!-- Placeholder for alignment or future buttons -->
+            <div></div>
+        </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="container mx-auto mt-8 p-4 max-w-3xl">
+        <div class="bg-white rounded-xl shadow-lg p-8 mb-8">
+            <!-- Back to Dashboard Button -->
+            <div class="mb-6">
+                <button class="btn-secondary font-bold py-2 px-6 rounded-full shadow-md transition duration-300">
+                    &larr; Back to Dashboard
+                </button>
+            </div>
+
+            <h1 class="text-4xl font-bold text-gray-900 mb-2">Introduction to Quantum Physics</h1>
+            <p class="text-green-700 text-lg font-semibold mb-6">Subject: Physics</p>
+
+            <div class="flex flex-wrap text-gray-600 text-sm mb-6 space-y-2 sm:space-y-0 sm:space-x-8">
+                <p><strong>Uploaded By:</strong> Dr. Alice Smith</p>
+                <p><strong>Date:</strong> 2025-07-20</p>
+            </div>
+
+            <h2 class="text-2xl font-semibold text-gray-800 mb-4">Description</h2>
+            <p class="text-gray-700 leading-relaxed mb-8">
+                This comprehensive note provides an introduction to the fundamental concepts of quantum physics. It covers topics such as wave-particle duality, the uncertainty principle, quantum superposition, and entanglement. Ideal for students beginning their journey into modern physics, this document aims to simplify complex ideas through clear explanations and illustrative examples. It includes a basic overview of quantum mechanics postulates and their applications.
+            </p>
+
+            <!-- Preview/Download Link -->
+            <div class="text-center">
+                <a href="#" target="_blank" class="btn-primary inline-flex items-center text-white font-bold py-3 px-8 rounded-full shadow-lg hover:shadow-xl transition duration-300 text-lg">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+                    </svg>
+                    Preview / Download File
+                </a>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>
