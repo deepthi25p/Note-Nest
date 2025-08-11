@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NoteNest - Login</title>
-    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
         /* Custom styles for the Inter font and default body */
@@ -30,7 +29,6 @@
 <body>
 
     <div class="flex flex-col items-center justify-center p-4">
-        <!-- Logo for the login page -->
         <a href="index.html" class="flex items-center space-x-2 mb-8">
             <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m0 0l-7 7m7-7v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
@@ -38,26 +36,53 @@
             <span class="text-3xl font-bold text-gray-800">NoteNest</span>
         </a>
 
-        <!-- Login Card -->
         <div class="bg-white rounded-xl shadow-lg p-8 w-full max-w-sm md:max-w-md">
-            <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">Login to NoteNest</h2>
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-6">Login to NoteNest</h2>
 
-            <form>
+            <div class="flex mb-8 rounded-full border border-gray-300 overflow-hidden w-full">
+                <button id="student-login-btn" class="flex-1 py-2 text-sm font-semibold bg-green-500 text-white transition-colors duration-200">
+                    Student
+                </button>
+                <button id="teacher-login-btn" class="flex-1 py-2 text-sm font-semibold text-gray-700 hover:bg-gray-100 transition-colors duration-200">
+                    Teacher
+                </button>
+            </div>
+
+            <form id="student-login-form">
                 <div class="mb-6">
-                    <label for="email" class="block text-gray-700 text-sm font-semibold mb-2">Email Address</label>
-                    <input type="email" id="email" name="email" placeholder="you@example.com"
+                    <label for="student-email" class="block text-gray-700 text-sm font-semibold mb-2">Email Address</label>
+                    <input type="email" id="student-email" name="email" placeholder="you@example.com"
                            class="shadow-sm appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-green-400 focus:border-transparent transition duration-200"
                            required>
                 </div>
                 <div class="mb-8">
-                    <label for="password" class="block text-gray-700 text-sm font-semibold mb-2">Password</label>
-                    <input type="password" id="password" name="password" placeholder="••••••••"
+                    <label for="student-password" class="block text-gray-700 text-sm font-semibold mb-2">Password</label>
+                    <input type="password" id="student-password" name="password" placeholder="••••••••"
                            class="shadow-sm appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-green-400 focus:border-transparent transition duration-200"
                            required>
                 </div>
 
                 <button type="submit" class="btn-primary w-full text-white font-bold py-3 px-4 rounded-full shadow-lg hover:shadow-xl transition duration-300 text-lg">
-                    Login
+                    Login as Student
+                </button>
+            </form>
+
+            <form id="teacher-login-form" class="hidden">
+                <div class="mb-6">
+                    <label for="teacher-email" class="block text-gray-700 text-sm font-semibold mb-2">Email Address</label>
+                    <input type="email" id="teacher-email" name="email" placeholder="you@school.edu"
+                           class="shadow-sm appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-green-400 focus:border-transparent transition duration-200"
+                           required>
+                </div>
+                <div class="mb-8">
+                    <label for="teacher-password" class="block text-gray-700 text-sm font-semibold mb-2">Password</label>
+                    <input type="password" id="teacher-password" name="password" placeholder="••••••••"
+                           class="shadow-sm appearance-none border rounded-lg w-full py-3 px-4 text-gray-700 leading-tight focus:outline-none focus:ring-2 focus:ring-green-400 focus:border-transparent transition duration-200"
+                           required>
+                </div>
+
+                <button type="submit" class="btn-primary w-full text-white font-bold py-3 px-4 rounded-full shadow-lg hover:shadow-xl transition duration-300 text-lg">
+                    Login as Teacher
                 </button>
             </form>
 
@@ -66,6 +91,30 @@
             </p>
         </div>
     </div>
+    
+    <script>
+        const studentLoginBtn = document.getElementById('student-login-btn');
+        const teacherLoginBtn = document.getElementById('teacher-login-btn');
+        const studentLoginForm = document.getElementById('student-login-form');
+        const teacherLoginForm = document.getElementById('teacher-login-form');
 
+        studentLoginBtn.addEventListener('click', () => {
+            studentLoginBtn.classList.add('bg-green-500', 'text-white');
+            studentLoginBtn.classList.remove('bg-transparent', 'text-gray-700', 'hover:bg-gray-100');
+            teacherLoginBtn.classList.remove('bg-green-500', 'text-white');
+            teacherLoginBtn.classList.add('bg-transparent', 'text-gray-700', 'hover:bg-gray-100');
+            studentLoginForm.classList.remove('hidden');
+            teacherLoginForm.classList.add('hidden');
+        });
+
+        teacherLoginBtn.addEventListener('click', () => {
+            teacherLoginBtn.classList.add('bg-green-500', 'text-white');
+            teacherLoginBtn.classList.remove('bg-transparent', 'text-gray-700', 'hover:bg-gray-100');
+            studentLoginBtn.classList.remove('bg-green-500', 'text-white');
+            studentLoginBtn.classList.add('bg-transparent', 'text-gray-700', 'hover:bg-gray-100');
+            teacherLoginForm.classList.remove('hidden');
+            studentLoginForm.classList.add('hidden');
+        });
+    </script>
 </body>
 </html>
